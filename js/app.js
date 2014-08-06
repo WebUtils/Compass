@@ -6,7 +6,7 @@ angular.module("compass").controller("compass", function($scope) {
   $scope.roundedAngle = 0;
 
   var handleOrientationChange = function(e) {
-    $scope.angle = e.webkitCompassHeading || e.alpha;
+    $scope.angle = e.webkitCompassHeading ? (0-e.webkitCompassHeading) : e.alpha;
     $scope.roundedAngle = Math.round($scope.angle);
     $scope.apply();
   }
