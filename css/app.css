@@ -80,3 +80,10 @@ a:active {
   right: 5px;
   font-size: 10px;
 }
+
+.update {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+}

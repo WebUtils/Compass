@@ -1,11 +1,12 @@
 CACHE MANIFEST
-# Version: 1
+# Version: 2
 
 CACHE:
 index.html
 favicon.ico
 js/app.js
 js/lib/ca-helpers.js
+js/lib/angular-appcache.js
 img/compass.png
 img/icon/196.png
 css/app.css

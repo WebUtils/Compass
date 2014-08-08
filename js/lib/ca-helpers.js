@@ -20,14 +20,33 @@ angular.module("ca-helpers")
     }
   }
 
-  $rootScope.apply = function() {
-    return apply($rootScope);
-  }
-
-  return apply;
+  return function() {
+    $rootScope.apply = function() {
+      return apply($rootScope);
+    }
+  };
 
 })
 
 .run(function(caHelpersApply) {
   caHelpersApply();
+});
+
+angular.module("ca-helpers")
+
+.factory("caHelpersOnce", function($rootScope) {
+
+  var once = function(scope, event, fn) {
+    var removeFunction;
+    removeFunction = scope.$on(event, function() {
+      try {
+        fn();
+      } finally {
+        removeFunction();
+      }
+    });
+  }
+
+  return once;
+
 });
